@@ -1,11 +1,11 @@
 <script>
-import walls from "../assets/guide/angled walls.jpg";
-import barriers from "../assets/guide/barriers.jpg";
-import ways_down from "../assets/guide/going down.jpg";
-import arches from "../assets/guide/hallyway and bridge arches.jpg";
-import paths from "../assets/guide/paths and roads.jpg";
-import roofs from "../assets/guide/roofs.jpg";
-import triangles from "../assets/guide/triangles and circles.jpg";
+// import walls from "../assets/guide/angled walls.jpg";
+// import barriers from "../assets/guide/barriers.jpg";
+// import ways_down from "../assets/guide/going down.jpg";
+// import arches from "../assets/guide/hallyway and bridge arches.jpg";
+// import paths from "../assets/guide/paths and roads.jpg";
+// import roofs from "../assets/guide/roofs.jpg";
+// import triangles from "../assets/guide/triangles and circles.jpg";
 
 export default {
   methods: {
@@ -36,37 +36,37 @@ export default {
       greeting: "Build guides",
       imageList: [
         {
-          url: walls,
+          url: "guide/angled walls.jpg",
           title: "Angled Walls",
         },
         {
-          url: barriers,
+          url: "guide/barriers.jpg",
           title: "Types of Barriers",
         },
         {
-          url: ways_down,
+          url: "guide/going down.jpg",
           title: "Getting Up, Down, and Around",
         },
         {
-          url: arches,
+          url: "guide/hallyway and bridge arches.jpg",
           title: "Arch with Pizazz",
         },
         {
-          url: paths,
+          url: "guide/paths and roads.jpg",
           title: "Paths and Roads",
         },
         {
-          url: roofs,
+          url: "guide/roofs.jpg",
           title: "Roofs",
         },
         {
-          url: triangles,
+          url: "guide/triangles and circles.jpg",
           title: "Triangles and Circles",
         },
       ],
       currentImage: 0,
     };
-  }
+  },
 };
 </script>
 
@@ -76,16 +76,15 @@ export default {
     <nav class="basis-1/6 bg-slate-500">
       <ul class="pt-5">
         <li
-          :class="[index === this.currentImage ? 'bg-gray-700' : '']"
-          class="
-            text-lg font-semibold
-            py-3 pl-3 bg-slate-800 text-white
-            hover:bg-slate-600
-            active:bg-slate-900 active:text-slate-500 active:-translate-y-1 active:shadow-xl active:shadow-black
-            transition ease-in-out duration-300
-            cursor-pointer
-          " 
-          v-for="(image, index) in imageList" @click="() => setImage(index)">
+          :class="[
+            index === this.currentImage
+              ? 'bg-gray-700 shadow-lg shadow-slate-700 -translate-y-1'
+              : 'bg-slate-800',
+          ]"
+          class="text-lg font-semibold py-3 pl-3 text-white hover:bg-slate-600 active:bg-slate-900 active:text-slate-500 active:-translate-y-1 active:shadow-xl active:shadow-black transition ease-in-out duration-300 cursor-pointer"
+          v-for="(image, index) in imageList"
+          @click="() => setImage(index)"
+        >
           {{ image.title }}
         </li>
       </ul>
@@ -93,9 +92,11 @@ export default {
     <!-- The component with the images -->
     <main class="basis-5/6">
       <div class="flex flex-row justify-center items-center">
-        <img 
+        <img
           class="max-h-screen"
-          :src="imageList[currentImage].url" />
+          :alt="imageList[currentImage].title"
+          :src="imageList[currentImage].url"
+        />
       </div>
     </main>
   </div>
