@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# What This Is
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is just a simple app to play with Vue, Vite, TailwindCSS and some images.
 
-## Recommended IDE Setup
+The guys over at blocktools.deep-orbit.com/ made these amazing guides. I wanted
+an easy way to use them, and wanted to be able to click between the guides I wanted to see.
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+So I took the chance to play around with some resources I haven't touched in a while... and
+here's the simple result.
+
+### Setup and run
+
+```
+yarn
+yarn dev
+```
+
+And then connect to localhost:3000
